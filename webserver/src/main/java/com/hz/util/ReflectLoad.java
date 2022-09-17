@@ -26,14 +26,14 @@ public class ReflectLoad {
     }
 
     //TODO 有参构造方法加载类信息（待完成）
-    public static <T> T LoadClass(T obj, String classname,String ... parmes) throws IllegalAccessException, InstantiationException {
+    public static <T> T LoadClass(T obj, String classname,String ... parames) throws IllegalAccessException, InstantiationException {
         T target = null;
         try {
             logger.debug("Loading class : "+ classname);
             Class<?> tClass = Class.forName(classname);
             tClass.getConstructors();
             Constructor<?> constructor = tClass.getConstructor(String.class);
-            Object targetobj = constructor.newInstance(parmes[0]);
+            Object targetobj = constructor.newInstance(parames[0]);
             target = (T) tClass.cast(targetobj);
         } catch (ClassNotFoundException | NoSuchMethodException | InvocationTargetException e) {
             e.printStackTrace();
