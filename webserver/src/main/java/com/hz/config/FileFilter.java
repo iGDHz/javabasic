@@ -8,6 +8,10 @@ public class FileFilter implements FilenameFilter {
 
     private Pattern pattern; //正则过滤器过滤文件
 
+    public FileFilter(){
+
+    }
+
     public FileFilter(String regex){
         pattern = Pattern.compile(regex);
     }
