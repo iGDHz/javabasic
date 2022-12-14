@@ -1,7 +1,0 @@
-<serve>
-    <port>8080</port>
-    <size>
-        <max>10</max>
-        <min>5</min>
-    </size>
-</serve>

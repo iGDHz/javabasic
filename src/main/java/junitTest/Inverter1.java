@@ -5,6 +5,6 @@
 package junitTest;
 
 public class Inverter1 implements StringInverter {
-  @Override
-  public String invert(String str) { return str; }
+    @Override
+    public String invert(String str) { return str; }
 }

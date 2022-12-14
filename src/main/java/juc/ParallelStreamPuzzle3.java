@@ -7,17 +7,17 @@ import java.util.*;
 import java.util.stream.*;
 
 public class ParallelStreamPuzzle3 {
-  public static void main(String[] args) {
-    //IntStream range = IntStream.range(0, 30);
-    List<Integer> x = IntStream.range(0, 30)
-      .peek(e -> System.out.println(e + ": " +
-        Thread.currentThread().getName()))
-      .limit(10)
-      .parallel()
-      .boxed()
-      .collect(Collectors.toList());
-    System.out.println(x);
-  }
+    public static void main(String[] args) {
+        //IntStream range = IntStream.range(0, 30);
+        List<Integer> x = IntStream.range(0, 30)
+                .peek(e -> System.out.println(e + ": " +
+                        Thread.currentThread().getName()))
+                .limit(10)
+                .parallel()
+                .boxed()
+                .collect(Collectors.toList());
+        System.out.println(x);
+    }
 }
 /* Output:
 8: main

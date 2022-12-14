@@ -14,19 +14,20 @@ import java.util.stream.Stream;
 import static java.util.stream.IntStream.range;
 
 public class StreamTest {
-    public StreamTest(int a,int b){
+//    public StreamTest(int a,int b){
+//
+//    }
+//    public StreamTest(int a,String b,char c){
+//
+//    }
+    public StreamTest(int a,char b){
 
     }
-    public StreamTest(int a,int b,char c){
-
-    }
-    public StreamTest(int a){
-
-    }
-    public StreamTest(){
+    public StreamTest(BiFunction function){
 
     }
     public static void main(String[] args) {
+        new StreamTest((a,b) -> a);
         long res = 0;
         long time = System.currentTimeMillis();
         for(int i = 0; i < 100_000_000; i++){
@@ -44,7 +45,6 @@ public class StreamTest {
         System.out.println("---------stream uses " +(System.currentTimeMillis()-time)+"ms---------");
         function(()->{
             System.out.println("hello world");
-
         });
 
         //生成随机数后过滤

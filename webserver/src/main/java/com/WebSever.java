@@ -14,6 +14,7 @@ import java.nio.file.FileSystems;
 import java.util.Map;
 
 public class WebSever {
+
     public static void main(String[] args) throws IOException {
 
         ServerSocket server = new ServerSocket(8080);
@@ -22,6 +23,7 @@ public class WebSever {
 
     @Test
     public void loadYaml(){
+        System.out.println(new WebSever().getClass());
         ConfigFileLoading autoLoading = new YamlAutoLoading();
         File file = new File(".");
         URL resource = WebSever.class.getResource("/");

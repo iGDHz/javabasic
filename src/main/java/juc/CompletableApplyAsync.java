@@ -2,27 +2,29 @@ package juc;// concurrent/CompletableApplyAsync.java
 // (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
-import references.Timer;
+
+
+import utils.Timer;
 
 import java.util.concurrent.*;
 
 public class CompletableApplyAsync {
-  public static void main(String[] args) {
-    Timer timer = new Timer();
-    CompletableFuture<Machina> cf =
-      CompletableFuture.completedFuture(
-        new Machina(0))
-      .thenApplyAsync(Machina::work)
-      .thenApplyAsync(Machina::work)
-      .thenApplyAsync(Machina::work)
-      .thenApplyAsync(Machina::work);
-    for (int i = 0; i < 100; i++) {
-      cf.thenApply(Machina::work);
+    public static void main(String[] args) {
+        Timer timer = new Timer();
+        CompletableFuture<Machina> cf =
+                CompletableFuture.completedFuture(
+                                new Machina(0))
+                        .thenApplyAsync(Machina::work)
+                        .thenApplyAsync(Machina::work)
+                        .thenApplyAsync(Machina::work)
+                        .thenApplyAsync(Machina::work);
+        for (int i = 0; i < 100; i++) {
+            cf.thenApply(Machina::work);
+        }
+        System.out.println(timer.duration());
+        System.out.println(cf.join());
+        System.out.println(timer.duration());
     }
-    System.out.println(timer.duration());
-    System.out.println(cf.join());
-    System.out.println(timer.duration());
-  }
 }
 /* Output:
 103

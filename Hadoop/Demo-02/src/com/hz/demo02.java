@@ -36,6 +36,7 @@ public class demo02 {
         for (int i = 0; i < otherargs.length - 1; i++) {
             FileInputFormat.addInputPath(job,new Path(otherargs[i]));
         }
+
         FileOutputFormat.setOutputPath(job,new Path(otherargs[otherargs.length-1]));
         if(job.waitForCompletion(true)){
             for (int i = 0; i < otherargs.length-1; i++) {
@@ -46,7 +47,6 @@ public class demo02 {
             System.exit(0);
         }
         System.exit(1);
-
     }
 
 }

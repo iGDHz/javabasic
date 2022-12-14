@@ -6,14 +6,14 @@ import java.util.concurrent.*;
 import java.util.stream.*;
 
 public class CachedThreadPool {
-  public static void main(String[] args) {
-    ExecutorService exec =
-      Executors.newCachedThreadPool();
-    IntStream.range(0, 10)
-      .mapToObj(NapTask::new)
-      .forEach(exec::execute);
-    exec.shutdown();
-  }
+    public static void main(String[] args) {
+        ExecutorService exec =
+                Executors.newCachedThreadPool();
+        IntStream.range(0, 10)
+                .mapToObj(NapTask::new)
+                .forEach(exec::execute);
+        exec.shutdown();
+    }
 }
 /* Output:
 NapTask[1] pool-1-thread-2

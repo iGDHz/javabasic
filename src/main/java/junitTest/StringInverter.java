@@ -5,5 +5,5 @@
 package junitTest;
 
 interface StringInverter {
-  String invert(String str);
+    String invert(String str);
 }

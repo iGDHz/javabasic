@@ -5,18 +5,18 @@ package utils;
 //   ------------------------------------------------------
 //  | 时间戳 | 机器id+数据id  | 序列id  |
 //  +-------+---------------+---------+
-//  | 42bit |  5bit + 5bit  |   12bit | 
+//  | 42bit |  5bit + 5bit  |   12bit |
 public class SnowflakeWorker {
-    
-    // 最后移除id生成的时间戳 
+
+    // 最后移除id生成的时间戳
     private long latestTime;
-    
+
     // 数据id所占位数(5位 最大2^5-1)
     private long DATA_ID_BITS = 5L;
-    
+
     //机器id所占位数(5位 最大2^5-1)
     private long MAC_ID_BITS = 5L;
-    
+
     //序列id所占位数
     private long SERIAL_ID_BITS = 12L;
 
